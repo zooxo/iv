@@ -6,8 +6,8 @@
 
   ____________________
 
-  Welcome to Ivee (IV) - A Powerful Programable RPN Calculator based on FORTH
-  Version 1.0, (c) 2020 by deetee/zooxo
+  Welcome to Ivee (IV) - A Powerful Programable RPN Calculator based on FORTH  
+  Version 1.0, (c) 2020 by deetee/zooxo  
   This software is covered by the 3-clause BSD license.
   ____________________
 
