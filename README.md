@@ -27,13 +27,13 @@
   system oriented commands and additional built-in Forth words. In addition
   the user can define/program new words based on existing words and commands.
 
-  The hardware is simple:
-    - Arduino Pro Micro
-    - OLED display (128x64 pixel) with SSD1306- or SSD1309-controller
-    - 16 keys (push buttons)
-    optional: - LIPO battery
-              - LIPO battery charger (TP4056)
-              - ON/OFF-switch
+  The hardware is simple:  
+    - Arduino Pro Micro  
+    - OLED display (128x64 pixel) with SSD1306- or SSD1309-controller  
+    - 16 keys (push buttons)  
+    optional: - LIPO battery  
+              - LIPO battery charger (TP4056)  
+              - ON/OFF-switch  
 
   Allthough Ivee is operated by 16 keys only it offers a wide range of functions
   and possibilities:
