@@ -52,7 +52,7 @@
   - Clock and Torch function
   - Basic system functions (Battery voltage, Brightness, Screensaver)
 
-  Have fun!
+  Have fun!  
   deetee
 
   ____________________
