@@ -170,7 +170,7 @@
 
    COMMANDS
   ____________________
-
+```
   MEMORY
        functions         mem[]       EEPROM
     |<--intrinsic-->|<--builtin-->|<--user-->|
@@ -341,7 +341,7 @@
      83 ...   90    8   Memory area for RCL/STO (integer number in BASE mode)
      91 ...  122   32   Memory area for user selectable MENU
     123 ... 1023  901   User program memory area
-
+```
   ____________________
 
    MEMORY, STACKS
