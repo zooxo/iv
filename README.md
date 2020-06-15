@@ -4,9 +4,9 @@
 ##  +++ the source code is coming soon - please be patient +++
   ____________________
 
-  Welcome to Ivee (IV) - A Powerful Programable RPN Calculator based on FORTH
-  Version 1.0, (c) 2020 by deetee/zooxo
-  This software is covered by the 3-clause BSD license.
+  Welcome to Ivee (IV) - A Powerful Programable RPN Calculator based on FORTH   
+  Version 1.0, (c) 2020 by deetee/zooxo   
+  This software is covered by the 3-clause BSD license.   
   ____________________
 
 
@@ -110,7 +110,7 @@
   However Ivee tries to offer a maximum of features, comfort and performance
   with a minimum of required resources.
 
-  LIMITS:
+  LIMITS:   
     26   ... Maximal data stack size (a...z)
     7    ... Maximum number of displayed significant digits of a number
     36   ... Maximum number of decimal exponent digits (1E-37 < X < 1E37)
@@ -226,7 +226,7 @@
              COS TAN ASIN ACOS ATAN SINH COSH TANH ASINH ACOSH ATANH
              DEG>RAD RAD>DEG C>F F>C KM>MI MI>KM M>FT FT>M CM>IN IN>CM
 
-
+```
   DICTIONARY (in order of "appearence")
     000   0     ... Numbers
     001 ! 1
@@ -361,7 +361,7 @@
     117 ? ><cm  ... Convert centimeter to inches (and vice versa)
     118 ? ><kg  ... Convert kilogram to lbs (and vice versa)
     119 ? ><l   ... Convert liter to gallons (and vice versa)
-
+```
   ____________________
 
    EEPROM
