@@ -111,6 +111,7 @@
   with a minimum of required resources.
 
   LIMITS:   
+```
     26   ... Maximal data stack size (a...z)
     7    ... Maximum number of displayed significant digits of a number
     36   ... Maximum number of decimal exponent digits (1E-37 < X < 1E37)
@@ -124,7 +125,7 @@
     1E-4 ... X-range of solver (Newton) to determine slope of function
     10   ... Calculation "stripes" for integrating (Simpson)
     32   ... Maximal definable command slots of user menu
-
+```
   ____________________
 
    BROWSING MENUS
