@@ -9,6 +9,7 @@
   This software is covered by the 3-clause BSD license.   
   ____________________
 
+See a short video of IVEE at:  https://youtu.be/m1aFRhqvuLM
 
   ____________________
 
