@@ -1,3 +1,7 @@
+# IVEE - a Powerful Programable RPN Calculator based on FORTH
+  ____________________
+
+##  +++ the source code is coming soon - please be patient +++
   ____________________
 
   Welcome to Ivee (IV) - A Powerful Programable RPN Calculator based on FORTH
