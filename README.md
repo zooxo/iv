@@ -1,13 +1,7 @@
-# IVEE - a Powerful Programable RPN Calculator based on FORTH
----
-+++ the source code is coming soon - please be patient +++
----
-
-
   ____________________
 
-  Welcome to Ivee (IV) - A Powerful Programable RPN Calculator based on FORTH  
-  Version 1.0, (c) 2020 by deetee/zooxo  
+  Welcome to Ivee (IV) - A Powerful Programable RPN Calculator based on FORTH
+  Version 1.0, (c) 2020 by deetee/zooxo
   This software is covered by the 3-clause BSD license.
   ____________________
 
@@ -27,13 +21,13 @@
   system oriented commands and additional built-in Forth words. In addition
   the user can define/program new words based on existing words and commands.
 
-  The hardware is simple:  
-    - Arduino Pro Micro  
-    - OLED display (128x64 pixel) with SSD1306- or SSD1309-controller  
-    - 16 keys (push buttons)  
-    optional: - LIPO battery  
-              - LIPO battery charger (TP4056)  
-              - ON/OFF-switch  
+  The hardware is simple:
+    - Arduino Pro Micro
+    - OLED display (128x64 pixel) with SSD1306- or SSD1309-controller
+    - 16 keys (push buttons)
+    optional: - LIPO battery
+              - LIPO battery charger (TP4056)
+              - ON/OFF-switch
 
   Allthough Ivee is operated by 16 keys only it offers a wide range of functions
   and possibilities:
@@ -52,7 +46,7 @@
   - Clock and Torch function
   - Basic system functions (Battery voltage, Brightness, Screensaver)
 
-  Have fun!  
+  Have fun!
   deetee
 
   ____________________
@@ -70,7 +64,7 @@
       1 NEW   2 IN   3 DOWN           1 B  2 C    3 D
       0 REN  . DEL  D EDIT            0 A  . A~F
 
-    MENU/CATALOG/REN Navigation:    SUM/STAT/L.R. Storage Registers:
+    MENU/DICT/REN Navigation:       SUM/STAT/L.R. Storage Registers:
              Q1  Q2  Q3  Q4           7 SN  8 SX   9 SY
       UP     E   4   5   6                  5 SXX  6 SXY
       DOWN   N   1   2   3
@@ -91,6 +85,41 @@
     n BASE   ... Numeric base of BASE mode
     !        ... Indicates float of data stack (data loss in lowest stack level)
     ^, v     ... F-key, G-key
+
+  ____________________
+
+   LIMITS
+  ____________________
+
+  As a microprocessor is primarily not made to do such complex things like
+  performing a powerful calculator there are some limits in performance and
+  resources.
+  Most obviously is the limited precision of the intrinsic float format (IEEE
+  754, 32 bit). As four bytes only are used to represent a float respective
+  double number the decimal digits of precision is limited to 6...7. For
+  example calculating sqrt(-1) yields in a display of "7.5E-8 + i" (instead of
+  "0 + i").
+  In addition the resources of a microcontroller are limited like the FLASH
+  memory (holds the executable program code), the RAM memory (holds variables
+  and data while running) and the EEPROM (holds permanent data like settings or
+  user programs).
+  However Ivee tries to offer a maximum of features, comfort and performance
+  with a minimum of required resources.
+
+  LIMITS:
+    26   ... Maximal data stack size (a...z)
+    7    ... Maximum number of displayed significant digits of a number
+    36   ... Maximum number of decimal exponent digits (1E-37 < X < 1E37)
+    12   ... Maximal size of text display (see EMIT, CTX)
+    10   ... Maximal amount of (complex) numbers saved permanently (0...9)
+    3    ... Maximal number of characters for naming an user program
+    40   ... Maximal number of user programs
+    128  ... Maximal size of an user program (steps)
+    900  ... Maximal size (steps) of all user programs
+    64   ... Maximal size of address stack ("deep of nesting")
+    1E-4 ... X-range of solver (Newton) to determine slope of function
+    10   ... Calculation "stripes" for integrating (Simpson)
+    32   ... Maximal definable command slots of user menu
 
   ____________________
 
@@ -130,7 +159,7 @@
     even possible to manipulate the program memory and execute code.
     A program is structured into the three parts NAME, COMMANDS and EOP-marker.
     Please note that the length of the program name is restricted to 3
-    characters and the maximum number of program commands is restricted to 255.
+    characters and the maximum number of program steps is restricted to 128.
 
   ____________________
 
@@ -170,7 +199,7 @@
 
    COMMANDS
   ____________________
-```
+
   MEMORY
        functions         mem[]       EEPROM
     |<--intrinsic-->|<--builtin-->|<--user-->|
@@ -250,7 +279,7 @@
     043 K LIT+  ... Rise the brightness of the display (5 levels). Note that
                     the display has to be rebooted (needs two seconds).
     044 L TOFF  ... Set the screen off time (x 10 s) (>=3)
-    045 M PICK  ... Copie n-th number of stack to stack
+    045 M PICK  ... Copy n-th number of stack to stack
     046 N ROT   ... Rotate 3 numbers of stack (ZYX -> YXZ)
     047 O DARK  ... Enter screen off manually (triple press F)
     048 P <     ... Condition less than (returns true, if Y<X)
@@ -289,6 +318,7 @@
     081 q OVER  ... Push/copy Y to stack (YX -> YXY)
     082 r ABS   ... Push the absolute value of X to stack
     083 s SQRT  ... Push the quare root of X to stack
+
     084 t COS   ... Push the cosine of X to stack
     085 u TAN   ... Push the tangent of X to stack
     086 v POW   ... Push Y raised to the power of X to stack (X = Y^X)
@@ -317,16 +347,16 @@
                     permanent memories 5...9 (see RCL/STO) are used as statistic
                     registers (Sxx, Sxy, n, Sx, Sy).
     109 ? LR    ... Line best fit (y = X * x + Y)
-    110 ? d>r   ... Convert degrees to radiants
-    111 ? r>d   ... Convert radiants to degrees
-    112 ? C>F   ... Convert Ceslsius to Fahrenheit
-    113 ? F>C   ... Convert Fahrenheit to Ceslsius
-    114 ? km>   ... Convert kilometers to miles
-    115 ? >km   ... Convert miles to to miles
-    116 ? m>f   ... Convert meter ro feet
-    117 ? f>m   ... Convert feet to meter
-    118 ? cm>   ... Convert centimeter to inches
-    119 ? >cm   ... Convert inches to centimeter
+    110 ? %     ... Percent (X/Y*100%)
+    111 ? %CHG  ... Percent change (X-Y)/Y*100%
+    112 ? FRAC  ... Fractional part
+    113 ? ><d   ... Convert degrees to radians (and vice versa)
+    114 ? ><C   ... Convert Celsius to Fahrenheit (and vice versa)
+    115 ? ><km  ... Convert kilometer to miles (and vice versa)
+    116 ? ><m   ... Convert meter to feet (and vice versa)
+    117 ? ><cm  ... Convert centimeter to inches (and vice versa)
+    118 ? ><kg  ... Convert kilogram to lbs (and vice versa)
+    119 ? ><l   ... Convert liter to gallons (and vice versa)
 
   ____________________
 
@@ -341,7 +371,7 @@
      83 ...   90    8   Memory area for RCL/STO (integer number in BASE mode)
      91 ...  122   32   Memory area for user selectable MENU
     123 ... 1023  901   User program memory area
-```
+
   ____________________
 
    MEMORY, STACKS
@@ -494,4 +524,3 @@
       5.670373E-8   _SB Stefan-Boltzmann constant
       1.618034      _P  Golden ratio
       2.067834E-15  _Po Magnetic flux quantum
-
