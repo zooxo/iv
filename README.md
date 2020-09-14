@@ -205,7 +205,7 @@ See a short video of IVEE at:  https://youtu.be/m1aFRhqvuLM
 
    COMMANDS
   ____________________
-
+```
   MEMORY
        functions         mem[]       EEPROM
     |<--intrinsic-->|<--builtin-->|<--user-->|
@@ -228,7 +228,7 @@ See a short video of IVEE at:  https://youtu.be/m1aFRhqvuLM
              COS TAN ASIN ACOS ATAN SINH COSH TANH ASINH ACOSH ATANH
              DEG>RAD RAD>DEG C>F F>C KM>MI MI>KM M>FT FT>M CM>IN IN>CM
 
-```
+
   DICTIONARY (in order of "appearence")
     000   0     ... Numbers
     001 ! 1
