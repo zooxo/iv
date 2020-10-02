@@ -4,6 +4,8 @@
   This software is covered by the 3-clause BSD license.   
   ____________________
 
+  ![all](https://user-images.githubusercontent.com/16148023/94920040-ca074d80-04b5-11eb-8cec-c0d62ee9ae49.jpg)
+
   See a short video of IVEE at:  https://youtu.be/m1aFRhqvuLM
 
   ____________________
