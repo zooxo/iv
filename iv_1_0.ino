@@ -1,34 +1,4 @@
 /*
-  TODO
-    atan(1E36)
-    clean up
-    another plotting app
-    game
-    about
-    repeat last command
-
-    functions left:
-      from quart: rcl sto rotup lastx stacklift prgfmt
-      from dm42: setradix(, or .) signum show int/ sqr
-    matrix
-
-
-  xor
-  type
-  ! c@ c! cmove fill erase
-  begin-while-repeat
-  for-next
-
-  ." " ... output string
-  i ... loop word/variable
-  DO -sequence- LOOP ... loops i from X to Y-1
-  VARIABLE v ... define variable v (actually pointer)
-     ? ... outputs variable (equal to: @ .)
-     n constant c ... save n to constant c (c pushes n to stack)
-     ALLOT ... array memory allocation
-
-  ----v----1----v----2----v----3----v----4----v----5----v----6----v----7----v----8
-
   ____________________
 
   Welcome to Ivee (IV) - A Powerful Programable RPN Calculator based on FORTH
@@ -36,7 +6,6 @@
   This software is covered by the 3-clause BSD license.
   See also: https://github.com/zooxo/iv and https://youtu.be/m1aFRhqvuLM
   ____________________
-
 
   ____________________
 
